@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Add listing{% endblock %}
+
+{% block content %}
+<!-- add stuff here -->
+    table
+    <table>
+
+    </table>
+
+    body{
+          background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          }
+    <button type="button" value = "ADD PICTURE">Add Pictures</button>
+    <title>Click for Pics</title>
+    <p>Click here to upload tool's pictures</p>
+
+        <label for = "location">Add Location:</label>
+        <input type = "location"></form><br><br>
+        <label for = "description">Add Description:</label>
+        <input type = "text" name = "description"></form><br><br>
+        <label for = "tags">Add Tags:</label>
+        <input type = "text" name = "tags"></form><br><br>
+        <label for = "schedule">Add Schedule:</label>
+        <input type = "datetime" name = "schedule"></form><br>
+
+        <p>Share your tools with everyone!</p>
+
+        <form action="/action_page.php">
+        <input type="file" id="myFile" name="filename">
+        </form>
+
+
+{% endblock %}
