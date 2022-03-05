@@ -2,6 +2,22 @@
 
 {% block title %}Map{% endblock %}
 
+{% block head %}
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+{%  endblock %}
+
 {% block content %}
-<!-- add stuff here -->
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic2FzdDI4ODMiLCJhIjoiY2wwZWJuNWk0MGhrMDNkcXRpYmN5cmhsbiJ9.WGzYt8gxP35lsgRxnzTopQ';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+</script>
+
+
 {% endblock %}
