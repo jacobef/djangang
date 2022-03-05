@@ -1,14 +1,27 @@
 from django.shortcuts import render
 
 # Create your views here.
+from django.views.generic import CreateView, UpdateView
+
+from rental.models import Tool
 
 
 def home(request):
     return render(request, "rental/home.html")
 
 
-def add_listing(request):
-    return render(request, "rental/add_listing.html")
+class ToolCreateView(CreateView):
+    model = Tool
+    fields = "__all__"
+    template_name = "rental/add_listing.html"
+    success_url = "/home/"
+
+
+class ToolUpdateView(UpdateView):
+    model = Tool
+    fields = "__all__"
+    template_name = "rental/update_listing.html"
+    success_url = "/home/"
 
 
 def tool_search(request):
