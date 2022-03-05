@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'rental.apps.RentalConfig',
+    'mapbox_location_field',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MAPBOX_KEY = 'pk.eyJ1Ijoic2FzdDI4ODMiLCJhIjoiY2wwZWJuNWk0MGhrMDNkcXRpYmN5cmhsbiJ9.WGzYt8gxP35lsgRxnzTopQ'

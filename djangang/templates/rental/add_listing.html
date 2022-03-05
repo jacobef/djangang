@@ -2,6 +2,17 @@
 
 {% block title %}Add listing{% endblock %}
 
+{% block head %}
+    {% load mapbox_location_field_tags %}
+    {% location_field_includes %}
+    {% include_jquery %}
+{% endblock %}
+
 {% block content %}
-<!-- add stuff here -->
+<form method="post">
+{% csrf_token %}
+   {{form}}
+   <input type="submit" value="submit">
+</form>
+{{ form.media }}
 {% endblock %}
