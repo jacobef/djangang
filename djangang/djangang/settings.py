@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'rental.apps.RentalConfig',
+    'location_field.apps.DefaultConfig',
 ]
 
 MIDDLEWARE = [
