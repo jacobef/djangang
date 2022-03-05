@@ -7,4 +7,5 @@ urlpatterns = [
     path('add/', views.ToolCreateView.as_view()),
     path('search/', views.tool_search),
     path('map/', views.local_map),
+    path('tool/<int:pk>', views.ToolUpdateView.as_view()),
 ]
