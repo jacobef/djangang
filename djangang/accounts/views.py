@@ -15,8 +15,8 @@ class UserCreateView(CreateView):
     success_url = "/accounts/login"
 
 
-def my_account(request):
-    return render(request, "accounts/my_account.html")
+def profile(request):
+    return render(request, "accounts/profile.html")
 
 
 class LoginView(django_auth_views.LoginView):
