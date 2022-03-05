@@ -16,6 +16,10 @@ class ToolCreateView(CreateView):
     template_name = "rental/add_listing.html"
     success_url = "/home/"
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 class ToolUpdateView(UpdateView):
     model = Tool
