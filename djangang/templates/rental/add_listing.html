@@ -1,18 +1,3 @@
-{% extends "base.html" %}
+{% extends "rental/base_edit_listing.html" %}
 
-{% block title %}Add listing{% endblock %}
-
-{% block head %}
-    {% load mapbox_location_field_tags %}
-    {% location_field_includes %}
-    {% include_jquery %}
-{% endblock %}
-
-{% block content %}
-<form method="post">
-{% csrf_token %}
-   {{form}}
-   <input type="submit" value="submit">
-</form>
-{{ form.media }}
-{% endblock %}
+{% block title %}Create tool listing{% endblock %}
