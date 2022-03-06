@@ -10,7 +10,7 @@
         Type: {{ tool.type }}<br>
         Brand: {{ tool.brand }}<br>
         Price: {{ tool.price }}<br>
-        Location: {{ tool.location }}<br>
         Owner: {{ tool.owner }}<br>
+        <a href={% url "rental:details" pk=tool.pk %}>View details</a><br>
     {% endfor %}
 {% endblock %}
