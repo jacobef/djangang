@@ -11,8 +11,9 @@ from django.db.models import QuerySet
 from rental.models import Tool
 
 
-def generate_tool_geojson(tool: Tool):
-    return f"""        {{
+def generate_geojson():
+    def generate_tool_geojson(tool: Tool):
+        return f"""        {{
             "type": "Feature",
             "properties": {{}},
             "geometry": {{
@@ -24,20 +25,17 @@ def generate_tool_geojson(tool: Tool):
             }}
         }}"""
 
-
-def generate_map_geojson(tools: QuerySet):
-    features_content = ""
-    for tool in tools:
-        features_content += generate_tool_geojson(tool)
-        features_content += ',\n'
-    return f"""{{
+    def generate_map_geojson(tools: QuerySet):
+        features_content = ""
+        for tool in tools:
+            features_content += generate_tool_geojson(tool)
+            features_content += ',\n'
+        return f"""{{
     "type": "FeatureCollection",
     "features": [
 {features_content}
     ]
-}}
-"""
+}}"""
 
-
-tools = Tool.objects.all()
-print(generate_map_geojson(tools))
+    tools = Tool.objects.all()
+    return generate_map_geojson(tools)

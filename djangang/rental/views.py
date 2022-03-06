@@ -7,6 +7,11 @@ from django.views.generic import CreateView, UpdateView
 from rental.forms import ToolSearchForm
 from rental.models import Tool
 
+from djangang.settings import BASE_DIR
+
+from generate_geojson import generate_geojson
+
+
 
 def home(request):
     return render(request, "rental/home.html")
@@ -56,4 +61,4 @@ def tool_search_results(request):
 
 
 def local_map(request):
-    return render(request, "rental/local_map.html")
+    return render(request, "rental/local_map.html", {'geojson': generate_geojson()})
