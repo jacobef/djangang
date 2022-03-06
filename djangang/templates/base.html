@@ -12,8 +12,12 @@
 <nav class="main-nav">
     <div class = "nav-logo"></div>
     <ul>
+        <li><a href="/">Home</a></li>
         <li><a href={% url "rental:search" %}>Search</a></li>
         <li><a href={% url "rental:map" %}>Map</a></li>
+        <li><a href={% url "rental:add" %}>Add Tool</a></li>
+        <li><a href={% url "accounts:profile" %}>Profile</a></li>
+
     </ul>
 </nav>
 </header>
