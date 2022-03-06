@@ -21,6 +21,7 @@ body{
     background-color: #333;
     overflow: hidden;
     height: 50px;
+    width:100vw;
 }
 
 /* Style the links inside the navigation bar */
