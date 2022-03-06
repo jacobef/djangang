@@ -3,9 +3,15 @@
 {% block title %}Tool Search{% endblock %}
 
 {% block content %}
+    <style>
+    body{
+        background-image: linear-gradient(to top, #986147 0%, #18a1e7 100%);
+    }
+</style>
 <form method="post" action={% url "rental:search-results" %}>
+
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Search</button>
+    <button type="submit" style = "color:Yellow;" style = "font-family: courier;">Search</button>
 </form>
 {% endblock %}
