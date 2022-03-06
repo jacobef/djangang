@@ -1,7 +1,6 @@
 body{
     /*height: 100vh;*/
-    width: auto;
-    max-width: 1200px;
+    width: 100vw;
     margin: auto;
     background-size: cover !important;
     background: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
@@ -15,6 +14,7 @@ body{
     flex-direction: column;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
+    background-repeat: no-repeat;
 }
 
 .topnav {
