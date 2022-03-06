@@ -5,7 +5,6 @@
 
 
 {% block content %}
-<!-- add stuff here -->
 {#    <style>#}
 {##}
 {##}
@@ -53,13 +52,12 @@
 {##}
 {#    </style>#}
 
-    <div class="profile-pic">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
-    </div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
 
-       <div class="upload-button">
-           <input class="file-upload" type="file" accept="image/*"/>
-       </div>
 
     <div class="My-tools">
         <h3>My Tools</h3>

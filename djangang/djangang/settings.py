@@ -29,13 +29,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-STATIC_URL = '/static/'
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -93,6 +86,8 @@ DATABASES = {
 }
 
 
+AUTH_USER_MODEL = 'accounts.User'
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -130,6 +125,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# Media files
+
+MEDIA_ROOT = 'media/'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

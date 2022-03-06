@@ -22,7 +22,7 @@ from djangang.settings import BASE_DIR
 
 from django.core import management
 from django.apps import apps
-from django.contrib.auth.models import User
+from accounts.models import User
 
 ignored_dirnames = [".git", ".idea", "venv"]
 
