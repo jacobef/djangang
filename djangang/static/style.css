@@ -71,7 +71,7 @@ textarea{
     height: 100px;
 }
 
-.banner li {
+.banner form li {
     padding-top: 10px;
     list-style: none;
     width: 600px;
