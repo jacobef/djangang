@@ -16,8 +16,9 @@ from generate_geojson import generate_geojson
 def home(request):
     return render(request, "rental/home.html")
 
-def details(request):
-    return render(request, "rental/details.html")
+def details(request,pk):
+    tool = Tool.objects.get(pk = pk)
+    return render(request, "rental/details.html", {'tool': tool})
 
 
 class ToolCreateView(CreateView):

@@ -6,14 +6,10 @@
 
 {% block content %}
 
-<h2>Rent a Tool</h2>
+<h2>{{ tool.name }}</h2>
 
     <div class = "action-btn">
     <a href = {%  url "rental:add" %}>Post a Tool</a>
-    </div>
-
-    <div class = "action-btn">
-    <a href= {%  url "rental:details" %}>Rent a Tool</a>
     </div>
 
 
