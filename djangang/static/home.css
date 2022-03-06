@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+h2{
+    font-size: xxx-large;
+    margin: 100px;
+}
+
+.action-btn a{
+    text-decoration: none;
+    color: white;
+}
+.action-btn a:hover{
+    text-decoration: none;
+    color: blue;
+}
