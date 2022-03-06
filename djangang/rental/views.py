@@ -2,9 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic import CreateView, UpdateView
+import os
 
-from rental.models import Tool
-
+from BASE_DIR import generate_geojson
+from models import Tool
 
 def home(request):
     return render(request, "rental/home.html")
@@ -33,4 +34,5 @@ def tool_search(request):
 
 
 def local_map(request):
-    return render(request, "rental/local_map.html")
+
+    return render(request, "rental/local_map.html", {"geojson": generate_geojson()})

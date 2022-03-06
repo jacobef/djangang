@@ -19,7 +19,6 @@
 	  }
 
 	  #map {
-		position: absolute;
 		top: 0;
 		bottom: 0;
 		width: 100%;
@@ -44,35 +43,7 @@
 
 <script>
 
-const geojson =
-{
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    17.026108920587063,
-                    51.10625692701248
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    9.62644615719418,
-                    -72.83946309555785
-                ]
-            }
-        },
-
-    ]
-};
+const geojson = {{ geojson }}
 
   mapboxgl.accessToken = 'pk.eyJ1Ijoic2FzdDI4ODMiLCJhIjoiY2wwZWJuNWk0MGhrMDNkcXRpYmN5cmhsbiJ9.WGzYt8gxP35lsgRxnzTopQ';
   var map = new mapboxgl.Map({

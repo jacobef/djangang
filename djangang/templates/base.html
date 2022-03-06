@@ -8,19 +8,27 @@
     {% block head %} {% endblock %}
 </head>
 <body>
-<header>
-<nav class="main-nav">
-    <div class = "nav-logo"></div>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href={% url "rental:search" %}>Search</a></li>
-        <li><a href={% url "rental:map" %}>Map</a></li>
-        <li><a href={% url "rental:add" %}>Add Tool</a></li>
-        <li><a href={% url "accounts:profile" %}>Profile</a></li>
+{#<header>#}
+{#    <div class = "nav-logo"></div>#}
+{#    <nav class="main-nav">#}
+{#        <a href="/">Home</a>#}
+{#        <a href={% url "rental:search" %}>Search</a>#}
+{#        <a href={% url "rental:map" %}>Map</a>#}
+{#        <a href={% url "rental:add" %}>Add Tool</a>#}
+{#        <a href={% url "accounts:profile" %}>Profile</a>#}
+{#</nav>#}
+{#</header>#}
 
-    </ul>
-</nav>
-</header>
+<div class="topnav">
+  <img src={% static "temptool-white.png" %}>
+  <div class="topnav-right">
+        <a href="/">Home</a>
+        <a href={% url "rental:search" %}>Search</a>
+        <a href={% url "rental:map" %}>Map</a>
+        <a href={% url "rental:add" %}>Add Tool</a>
+        <a href={% url "accounts:profile" %}>Profile</a>
+  </div>
+</div>
 <div class = "banner">
 {% block content %}
 {% endblock %}
