@@ -9,7 +9,6 @@
 {#    }#}
 {#</style>#}
 <form method="post" action={% url "rental:search-results" %}>
-
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" style = "color:Yellow;" style = "font-family: courier;">Search</button>

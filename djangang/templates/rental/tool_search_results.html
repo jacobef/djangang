@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+    {% if not tools.exists %}
+        <h2>No results found.</h2><br>
+        <h2><a href={% url "rental:search" %}>Back to search</a></h2>
+    {% endif %}
     {% for tool in tools %}
         Name: {{ tool.name }}<br>
         Type: {{ tool.type }}<br>

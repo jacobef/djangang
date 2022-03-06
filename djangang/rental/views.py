@@ -43,6 +43,15 @@ def tool_search_results(request):
     if submitted_form.data["by_type"]:
         tool_type = submitted_form.data["by_type"]
         matching_tools = matching_tools.filter(type=tool_type)
+    if submitted_form.data["by_name"]:
+        tool_name = submitted_form.data["by_name"]
+        matching_tools = matching_tools.filter(name=tool_name)
+    if submitted_form.data["by_brand"]:
+        tool_brand = submitted_form.data["by_brand"]
+        matching_tools = matching_tools.filter(brand=tool_brand)
+    if submitted_form.data["by_price"]:
+        tool_price = submitted_form.data["by_price"]
+        matching_tools = matching_tools.filter(price=tool_price)
     return render(request, "rental/tool_search_results.html", {'tools': matching_tools})
 
 
