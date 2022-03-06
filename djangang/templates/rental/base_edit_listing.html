@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
+    {{ block.super }}
     {% load mapbox_location_field_tags %}
     {% location_field_includes %}
     {% include_jquery %}
