@@ -7,14 +7,21 @@
         <h3>You have not sent any rental requests.</h3>
     {% endif %}
     {% for rental_request in rental_requests %}
-        For tool: {{ rental_request.tool }}
-        To: {{ rental_request.recipient.get_full_name }} ({{ rental_request.recipient.username }})
+        <div class="m-4 p-16 bg-black/25 rounded">
+        <div class = "inline-block w-[10vw]" >
+            <h3>For tool:</h3> <p>{{ rental_request.tool.name }}</p>
+            <h3>To: </h3> <p>{{ rental_request.recipient.get_full_name }} ({{ rental_request.recipient.username }}) </p>
+        </div>
+        <div class="float-right">
         {% if rental_request.approved %}
-            Your request has been APPROVED!
+            <p style="color:'green'"> Your request has been APPROVED! </p>
         {% endif %}
         {% if rental_request.rejected %}
-            Your request has been REJECTED.
+            <p style="color:'green'">Your request has been REJECTED.</p>
         {% endif %}
+        </div>
+        </div>
+
     {% endfor %}
      </div>
 {% endblock %}

@@ -1,11 +1,13 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Create Account{% endblock %}
+{% block head %}<link rel="stylesheet" href={% static "profile.css" %}>{% endblock %}
+
 
 {% block content %}
-<form method="POST">
+<form method="POST" class = "bg-black/25 py-4 px-6 rounded">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
+    {{ form.as_ul }}
+    <input type="submit" value="Submit" class = "mt-8 inline-block text-xl padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white py-4 px-6 rounded">
 </form>
 {% endblock %}
