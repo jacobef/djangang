@@ -52,14 +52,38 @@
 {##}
 {##}
 {#    </style>#}
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.container {
+  height: 100px;
+  position: relative;
+  border: 1px solid green;
+}
+
+</style>
     <div class="profile-pic">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" style = "width: 25%; height: 40%">
     </div>
 
-       <div class="upload-button">
-           <input class="file-upload" type="file" accept="image/*"/>
-       </div>
+       <div class="container">
+{#           <input class="file-upload" type="file" accept="image/*"/>#}
+           <div class = "vertical-center">
+             <button>Choose File</button>
+           </div>
+        </div>
 
     <div class="My-tools">
         <h3>My Tools</h3>
