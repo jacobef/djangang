@@ -4,20 +4,70 @@
 
 {% block content %}
 <!-- add stuff here -->
+    <style>
 
 
-       <div class="circle">
-       <img class="profile-pic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+    body {
+        background-image: linear-gradient(to right, #ffecd2 0%, #ff794e 100%);
+        position: absolute;
+    }
 
-     </div>
-     <div class="profile_image">
-       <i class="upload-button"></i>
-        <input class="file-upload" type="file" accept="image/*"/>
 
-     </div>
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        float: left;
+        top: 1000px;
+    }
+    .profile-pic {
+        height: 200px;
+        width: 200px;
 
-    <h3>My Tools</h3>
-    <h3>My Rentals</h3>
+        position: relative;
+        top: 75px;
+        left: 150px;
+
+    }
+
+    .My-tools {
+        position: relative;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        left: 500px;
+        bottom: 175px;
+    }
+    .My-rentals {
+        position: relative;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+
+        left: 500px;
+    }
+
+    .upload-button {
+        position: relative;
+        top: 75px;
+        left: 150px;
+    }
+
+
+    </style>
+
+    <div class="profile-pic">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+    </div>
+
+       <div class="upload-button">
+           <input class="file-upload" type="file" accept="image/*"/>
+       </div>
+
+    <div class="My-tools">
+        <h3>My Tools</h3>
+    </div>
+
+    <div class="My-rentals">
+        <h3>My Rentals</h3>
+    </div>
+
+
 
 
 
