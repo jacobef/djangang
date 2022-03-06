@@ -9,6 +9,7 @@ class Tool(models.Model):
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
     location = LocationField()
     brand = models.CharField(max_length=50)
+    description = models.TextField(max_length=5000)
     price = DecimalField(decimal_places=2, max_digits=7)
 
     class Type(models.TextChoices):

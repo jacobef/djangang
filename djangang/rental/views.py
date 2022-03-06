@@ -14,7 +14,7 @@ def home(request):
 
 class ToolCreateView(CreateView):
     model = Tool
-    fields = ["name", "location", "brand", "price", "type"]
+    fields = ["name", "location", "brand", "price", "type", "description"]
     template_name = "rental/add_listing.html"
     success_url = reverse_lazy("rental:home")
 
