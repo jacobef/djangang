@@ -22,6 +22,7 @@ from djangang.settings import BASE_DIR
 
 from django.core import management
 from django.apps import apps
+from django.contrib.auth.models import User
 
 ignored_dirnames = [".git", ".idea", "venv"]
 
@@ -99,6 +100,18 @@ def create_database():
     django_command_with_msg("migrate")
     print("Done creating database.", end='\n\n')
 
+
+def create_superuser():
+    print("Creating superuser...")
+    superuser = User()
+    superuser.username = "superuser"
+    superuser.is_superuser = True
+    superuser.is_staff = True
+    superuser.set_password("testingtesting")
+    superuser.email = "user@example.com"
+    superuser.save()
+
+
 # ----------------------
 # INPUT/PRINTING HELPERS
 # ----------------------
@@ -159,6 +172,7 @@ if everything_automatic == 'y' or everything_automatic == "yes":
     remove_database()
     make_migrations_files()
     create_database()
+    create_superuser()
 
 
 elif everything_automatic == 'n':

@@ -1,2 +1,2 @@
 Django~=4.0.2
-django-location-field==2.1.0
+django-mapbox-location-field~=2.0.0
