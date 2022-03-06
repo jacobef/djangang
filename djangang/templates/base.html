@@ -1,11 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href={% static "style.css" %}>
     {% block head %} {% endblock %}
 </head>
 <body>
+<header>
+<nav class="main-nav">
+    <div class = "nav-logo"></div>
+    <ul>
+        <li><a href={% url "rental:search" %}>Search</a></li>
+        <li><a href={% url "rental:map" %}>Map</a></li>
+    </ul>
+</nav>
+</header>
 {% block content %}
 {% endblock %}
 </body>
