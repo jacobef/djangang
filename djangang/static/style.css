@@ -50,6 +50,7 @@ body{
 /* Right-aligned section inside the top navigation */
 .topnav-right {
   float: right;
+    height: 50px;
 }
 
 .topnav img{
