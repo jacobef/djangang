@@ -1,5 +1,6 @@
 body{
     /*height: 100vh;*/
+    font-family: "Open Sans", sans-serif;
     width: 100vw;
     margin: auto;
     background-size: cover !important;
