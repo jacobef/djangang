@@ -1,9 +1,11 @@
-{% extends "base.html" %}
+{% extends "rental/base_edit_listing.html" %}
 
 {% block title %}Add listing{% endblock %}
 
 {% block content %}
-<!-- add stuff here -->
+    <!--block.super will paste what's in the content block of rental/base_edit_listing.html into here.
+    That being the form for creating a listing.-->
+    {{ block.super }}
     <style>
      body{
           background-image: linear-gradient(135deg, #475fc5 0%, #330e55 100%);

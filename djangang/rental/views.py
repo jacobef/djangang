@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
+from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, UpdateView
 
 from rental.forms import ToolSearchForm
@@ -13,20 +14,20 @@ def home(request):
 
 class ToolCreateView(CreateView):
     model = Tool
-    fields = "__all__"
+    fields = ["name", "location", "brand", "price", "type"]
     template_name = "rental/add_listing.html"
-    success_url = "/home/"
+    success_url = reverse_lazy("rental:home")
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
 
 class ToolUpdateView(UpdateView):
     model = Tool
-    fields = "__all__"
+    fields = ["name", "location", "brand", "price", "type"]
     template_name = "rental/update_listing.html"
-    success_url = "/home/"
+    success_url = reverse_lazy("rental:home")
 
 
 def tool_search(request):

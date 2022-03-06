@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views.generic import CreateView, UpdateView
@@ -6,6 +6,6 @@ from django.views.generic import CreateView, UpdateView
 
 def index(request):
     if request.user.is_authenticated:
-        return render(request, "rental/home.html")
+        return redirect("rental:home")
     else:
-        return render(request, "accounts/login.html")
+        return redirect("accounts:login")
