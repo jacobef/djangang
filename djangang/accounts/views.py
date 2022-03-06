@@ -16,7 +16,7 @@ def splash(request):
 class UserCreationForm(django_auth_forms.UserCreationForm):
     class Meta:
         model = models.User
-        fields = "__all__"
+        fields = ["username", "first_name", "last_name", "email", "password1", "password2"]
 
 
 class UserCreateView(CreateView):
