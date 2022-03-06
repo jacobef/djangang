@@ -11,6 +11,9 @@ from rental.models import Tool
 def home(request):
     return render(request, "rental/home.html")
 
+def rent(request):
+    return render(request, "rental/rent.html")
+
 
 class ToolCreateView(CreateView):
     model = Tool
