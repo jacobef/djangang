@@ -6,7 +6,13 @@
 
 {% block content %}
 
-<h2>{{ tool.name }}</h2>
+    <h2> Tool Name: </h2> <p>   {{ tool.get.name }}</p>
+    <h2> Tool Brand: </h2> <p>   {{ tool.get.brand }}</p>
+    <h2> Tool Price: </h2> <p>   {{ tool.get.price }}</p>
+    <h2> Tool Owner: </h2> <p>   {{ tool.get.owner }}</p>
+
+    <h2> Tool Location: </h2> <div class = "mapbox"></div>
+
 
     <div class = "action-btn">
     <a href = {%  url "rental:add" %}>Post a Tool</a>

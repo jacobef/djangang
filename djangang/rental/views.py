@@ -17,7 +17,7 @@ def home(request):
     return render(request, "rental/home.html")
 
 def details(request,pk):
-    tool = Tool.objects.get(pk = pk)
+    tool = Tool.objects.filter(pk = pk)
     return render(request, "rental/details.html", {'tool': tool})
 
 
