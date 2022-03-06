@@ -1,7 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.urls import reverse, reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, UpdateView
 
 from rental.forms import ToolSearchForm, RentalRequestForm
@@ -12,15 +14,17 @@ from djangang.settings import BASE_DIR
 from generate_geojson import generate_geojson
 
 
-
+@login_required
 def home(request):
     return render(request, "rental/home.html")
 
+@login_required
 def details(request,pk):
     tool = Tool.objects.filter(pk = pk)
     return render(request, "rental/details.html", {'tool': tool})
 
 
+@method_decorator(login_required, name='dispatch')
 class ToolCreateView(CreateView):
     model = Tool
     fields = ["name", "location", "brand", "price", "type", "description"]
@@ -32,6 +36,7 @@ class ToolCreateView(CreateView):
         return super().form_valid(form)
 
 
+@method_decorator(login_required, name='dispatch')
 class ToolUpdateView(UpdateView):
     model = Tool
     fields = ["name", "brand", "price", "type", "location"]
@@ -39,10 +44,11 @@ class ToolUpdateView(UpdateView):
     success_url = reverse_lazy("rental:home")
 
 
+@login_required
 def tool_search(request):
     return render(request, "rental/tool_search.html", {'form': ToolSearchForm()})
 
-
+@login_required
 def tool_search_results(request):
     matching_tools = Tool.objects.all()
     submitted_form = ToolSearchForm(request.POST)
@@ -61,10 +67,12 @@ def tool_search_results(request):
     return render(request, "rental/tool_search_results.html", {'tools': matching_tools})
 
 
+@login_required
 def local_map(request):
     return render(request, "rental/local_map.html", {'geojson': generate_geojson()})
 
 
+@login_required
 def rent_tool(request, pk: int):
     tool = Tool.objects.get(pk=pk)
     form = RentalRequestForm()
@@ -73,6 +81,7 @@ def rent_tool(request, pk: int):
     return render(request, "rental/rent_tool.html", {'tool': tool, 'form': form})
 
 
+@method_decorator(login_required, name='dispatch')
 class RentalRequestCreateView(CreateView):
     model = RentalRequest
     fields = ["using_for"]
@@ -90,24 +99,24 @@ class RentalRequestCreateView(CreateView):
         form.instance.recipient = form.instance.tool.owner
         return super().form_valid(form)
 
-
+@login_required
 def rental_requests_inbox(request):
     requests_to_me = RentalRequest.objects.filter(recipient=request.user, approved=None, rejected=None)
     return render(request, "rental/requests_inbox.html", {'rental_requests': requests_to_me})
 
-
+@login_required
 def rental_requests_outbox(request):
     my_requests = RentalRequest.objects.filter(sender=request.user)
     return render(request, "rental/requests_outbox.html", {'rental_requests': my_requests})
 
-
+@login_required
 def approve_rental_request(request, pk: int):
     rental_request: RentalRequest = RentalRequest.objects.get(pk=pk)
     rental_request.approved = True
     rental_request.save()
     return redirect("rental:home")
 
-
+@login_required
 def reject_rental_request(request, pk: int):
     rental_request: RentalRequest = RentalRequest.objects.get(pk=pk)
     rental_request.rejected = True
