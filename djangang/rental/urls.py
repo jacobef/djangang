@@ -10,4 +10,5 @@ urlpatterns = [
     path('search/results', views.tool_search_results, name="search-results"),
     path('map/', views.local_map, name="map"),
     path('tool/<int:pk>', views.ToolUpdateView.as_view()),
+    path('rent/', views.rent, name="rent"),
 ]
