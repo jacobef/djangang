@@ -3,11 +3,11 @@
 {% block title %}Tool Search{% endblock %}
 
 {% block content %}
-    <style>
-    body{
-        background-image: linear-gradient(to top, #e3dbd7 0%, #18a1e7 100%);
-    }
-</style>
+{#    <style>#}
+{#    body{#}
+{#        background-image: linear-gradient(to top, #e3dbd7 0%, #18a1e7 100%);#}
+{#    }#}
+{#</style>#}
 <form method="post" action={% url "rental:search-results" %}>
 
     {% csrf_token %}
