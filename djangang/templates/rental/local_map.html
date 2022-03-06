@@ -10,10 +10,11 @@
 
 {% block content %}
 
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' class="w-screen h-full"></div>
 
 	<style>
 		  body {
+              display: block;
 		margin: 0;
 		padding: 0;
 	  }
@@ -65,7 +66,7 @@ for (const feature of geojson.features) {
       .setPopup(
       new mapboxgl.Popup({ offset: 25 }) // add popups
       .setHTML(
-        `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+        `<h3>${feature.properties.title}</h3><a href="/">${feature.properties.description}</a>`
       )
       )
       .addTo(map);
