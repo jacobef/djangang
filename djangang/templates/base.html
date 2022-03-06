@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href={% static "style.css" %}>
+    <link rel="stylesheet" href={% static "style.css" %}>
     {% block head %} {% endblock %}
 </head>
 <body>
@@ -21,7 +21,9 @@
     </ul>
 </nav>
 </header>
+<div class = "banner">
 {% block content %}
 {% endblock %}
+</div>
 </body>
 </html>
