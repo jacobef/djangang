@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, UpdateView
 
-from rental.forms import ToolSearchForm
-from rental.models import Tool
+from rental.forms import ToolSearchForm, RentalRequestForm
+from rental.models import Tool, RentalRequest
 
 from djangang.settings import BASE_DIR
 
@@ -63,3 +63,53 @@ def tool_search_results(request):
 
 def local_map(request):
     return render(request, "rental/local_map.html", {'geojson': generate_geojson()})
+
+
+def rent_tool(request, pk: int):
+    tool = Tool.objects.get(pk=pk)
+    form = RentalRequestForm()
+    form.instance.tool = tool
+    form.instance.recipient = tool.owner
+    return render(request, "rental/rent_tool.html", {'tool': tool, 'form': form})
+
+
+class RentalRequestCreateView(CreateView):
+    model = RentalRequest
+    fields = ["using_for"]
+    template_name = "rental/rent_tool.html"
+    success_url = reverse_lazy("rental:home")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["tool"] = Tool.objects.get(pk=self.kwargs["tool_pk"])
+        return context
+
+    def form_valid(self, form):
+        form.instance.tool = Tool.objects.get(pk=self.kwargs["tool_pk"])
+        form.instance.sender = self.request.user
+        form.instance.recipient = form.instance.tool.owner
+        return super().form_valid(form)
+
+
+def rental_requests_inbox(request):
+    requests_to_me = RentalRequest.objects.filter(recipient=request.user, approved=None, rejected=None)
+    return render(request, "rental/requests_inbox.html", {'rental_requests': requests_to_me})
+
+
+def rental_requests_outbox(request):
+    my_requests = RentalRequest.objects.filter(sender=request.user)
+    return render(request, "rental/requests_outbox.html", {'rental_requests': my_requests})
+
+
+def approve_rental_request(request, pk: int):
+    rental_request: RentalRequest = RentalRequest.objects.get(pk=pk)
+    rental_request.approved = True
+    rental_request.save()
+    return redirect("rental:home")
+
+
+def reject_rental_request(request, pk: int):
+    rental_request: RentalRequest = RentalRequest.objects.get(pk=pk)
+    rental_request.rejected = True
+    rental_request.save()
+    return redirect("rental:home")

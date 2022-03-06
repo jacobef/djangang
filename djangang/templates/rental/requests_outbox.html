@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if not rental_requests.exists %}
+        <h3>You have not sent any rental requests.</h3>
+    {% endif %}
+    {% for rental_request in rental_requests %}
+        For tool: {{ rental_request.tool }}
+        To: {{ rental_request.recipient.get_full_name }} ({{ rental_request.recipient.username }})
+        {% if rental_request.approved %}
+            Your request has been APPROVED!
+        {% endif %}
+        {% if rental_request.rejected %}
+            Your request has been REJECTED.
+        {% endif %}
+    {% endfor %}
+{% endblock %}
