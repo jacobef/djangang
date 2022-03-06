@@ -3,5 +3,9 @@
 {% block title %}Tool Search{% endblock %}
 
 {% block content %}
-<!-- add stuff here -->
+<form method="post" action={% url "rental:search-results" %}>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
 {% endblock %}

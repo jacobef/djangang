@@ -3,6 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.generic import CreateView, UpdateView
 
+from rental.forms import ToolSearchForm
 from rental.models import Tool
 
 
@@ -29,7 +30,16 @@ class ToolUpdateView(UpdateView):
 
 
 def tool_search(request):
-    return render(request, "rental/tool_search.html")
+    return render(request, "rental/tool_search.html", {'form': ToolSearchForm()})
+
+
+def tool_search_results(request):
+    matching_tools = Tool.objects.all()
+    submitted_form = ToolSearchForm(request.POST)
+    if submitted_form.data["by_type"]:
+        tool_type = submitted_form.data["by_type"]
+        matching_tools = matching_tools.filter(type=tool_type)
+    return render(request, "rental/tool_search_results.html", {'tools': matching_tools})
 
 
 def local_map(request):
