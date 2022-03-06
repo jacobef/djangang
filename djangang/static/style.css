@@ -4,7 +4,7 @@ body{
     max-width: 1200px;
     margin: auto;
     background-size: cover !important;
-    background: linear-gradient(-20deg, #40afd7 0%, #0097ce 100%);
+    background: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
     overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -16,72 +16,6 @@ body{
     -webkit-box-pack: center;
     -ms-flex-pack: center;
 }
-
-/*header {*/
-/*    margin: auto;*/
-/*    width: 90%;*/
-/*    height: 50px;*/
-/*}*/
-
-/*header .nav-logo{*/
-/*    float: left;*/
-/*    height: 100px;*/
-/*    width: 100px;*/
-/*}*/
-
-/*header .main-nav a{*/
-/*      padding: 14px 16px;*/
-/*      text-decoration: none;*/
-/*      color: white;*/
-/*    font-family: "Open Sans", sans-serif;*/
-/*    font-weight: 600;*/
-/*    font-size: 16px;*/
-/*    color: white;*/
-/*    text-transform: uppercase;*/
-/*    letter-spacing: 2.5px;*/
-/*    !*display: -webkit-box;*!*/
-/*    !*display: -ms-flexbox;*!*/
-/*    !*display: flex;*!*/
-/*    margin: auto;*/
-/*    list-style: none;*/
-/*    text-decoration: none;*/
-/*    float: right;*/
-
-
-/*}*/
-
-/*header .main-nav a:hover {*/
-/*  !*background-color: deepskyblue;*!*/
-/*  color: deepskyblue;*/
-/*}*/
-
-/*!* Add a color to the active/current link *!*/
-/*header .main-nav a.active {*/
-/*  !*background-color: darkblue;*!*/
-/*  color: darkblue;*/
-/*}*/
-
-/*.banner {*/
-/*    width: 85%;*/
-/*    -webkit-backdrop-filter: blur(5px);*/
-/*    backdrop-filter: blur(5px);*/
-/*    padding: 30px 30px;*/
-/*    border-radius: 50px;*/
-/*    background-color: rgba(255, 255, 255, 0.05);*/
-/*    -webkit-box-shadow: 0px 0px 30px 30px rgb(255 255 255 / 5%);*/
-/*    box-shadow: 0px 0px 30px 30px rgb(255 255 255 / 5%);*/
-/*    display: -webkit-box;*/
-/*    display: -ms-flexbox;*/
-/*    display: flex;*/
-/*    -webkit-box-orient: vertical;*/
-/*    -webkit-box-direction: normal;*/
-/*    -ms-flex-direction: column;*/
-/*    flex-direction: column;*/
-/*    vertical-align: middle;*/
-/*    margin: auto auto;*/
-/*    -ms-flex-item-align: center;*/
-/*    align-self: center;*/
-/*}*/
 
 .topnav {
     background-color: #333;
@@ -96,7 +30,6 @@ body{
     font-size: 16px;
     color: white;
     float: left;
-    color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -105,13 +38,13 @@ body{
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #d3d3d3;
   color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: #7ad5b4;
   color: white;
 }
 
