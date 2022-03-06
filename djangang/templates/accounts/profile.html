@@ -73,6 +73,10 @@
 {#}#}
 {#</style>#}
 
+
+<style>
+
+</style>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
@@ -80,11 +84,13 @@
 </form>
 
 <div class="My-tools">
-    <h3>My Tools</h3>
+<a href=<{% url "accounts:add_tools" %>My Rental:</a>
 </div>
 
 <div class="My-rentals">
-    <h3>My Rentals</h3>
+<p><a href = "accounts:add_tools">My Tools:</a></p>
+{#<p>A relative URL: <a href="tag_a.asp">rental</a></p>#}
+
 </div>
 
 {% endblock %}

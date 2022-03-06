@@ -6,18 +6,18 @@
 
 {% block content %}
 
-    <h2> Tool Name: </h2> <p>   {{ tool.get.name }}</p>
-    <h2> Tool Brand: </h2> <p>   {{ tool.get.brand }}</p>
-    <h2> Tool Price: </h2> <p>   {{ tool.get.price }}</p>
-    <h2> Tool Owner: </h2> <p>   {{ tool.get.owner }}</p>
+    <div class = "text-white w-[60vw] m-auto mt-8 py-6">
+    <h2 class = "text-5xl leading-normal mb-16 font-bold italic">{{ tool.get.name }}</h2>
+    <h3 class = "text-l leading-normal font-bold mt-8"> Tool Brand: </h3> <p class = "text-l font-normal">   {{ tool.get.brand }}</p>
+    <h3 class = "text-l leading-normal font-bold mt-4"> Tool Price: </h3> <p class = "text-l font-normal">   {{ tool.get.price }}</p>
+    <h3 class = "text-l leading-normal font-bold mt-4"> Tool Owner: </h3> <p class = "text-l font-normal">   {{ tool.get.owner }}</p>
 
-    <h2> Tool Location: </h2> <div class = "mapbox"></div>
+    <h3 class = "text-l leading-normal font-bold mt-4"> Tool Location: </h3> <p class = "text-l font-normal">{{ tool.get.location }}</p>
 
-
-    <div class = "action-btn">
+    <button class = "mt-8 inline-block text-3xl padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white py-6 px-8 rounded">
     <a href={% url "rental:rent-tool" tool_pk=tool.pk %}>Rent Tool</a>
+    </button>
     </div>
-
 
 
 

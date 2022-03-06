@@ -3,10 +3,13 @@
 {% block title %}Log In{% endblock %}
 
 {% block content %}
-<h2>Log In</h2>
-<form method="post">
+
+    <div class = "text-white w-[60vw] m-auto mt-8 py-6">
+<h2 class = "text-center mb-8 text-3xl">Log In</h2>
+<form method="post" class = "bg-black/25 py-4 px-6 rounded m-0" >
     {% csrf_token %}
-    {{ form.as_p }}
-    <button class="padding-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Log In</button>
+    {{ form.as_ul }}
+    <button class="mt-4 padding-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Log In</button>
 </form>
+    </div>
 {% endblock %}

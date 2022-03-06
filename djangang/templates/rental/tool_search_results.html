@@ -11,10 +11,11 @@
     <h1 class="text-white text-left"> Search Results</h1>
     <ul>
     {% for tool in tools %}
-        <li class="py-4 text-white block">
+        <div>
+        <li class="py-4 text-white inline-block">
             <label class = "float-left p-[27px] pr-[40px] text-white"> {{ tool.id }}</label>
-            <p class="underline text-xl">{{ tool.name }}</p>
-            <p class = "font-normal">
+            <p class="underline text-xl inline">{{ tool.name }}</p>
+            <p class = "font-normal w-[70vw]">
         Type: {{ tool.type }},
         Brand: {{ tool.brand }},
         Price: {{ tool.price }},
@@ -22,6 +23,8 @@
             </p>
         </li>
         <button class="float-right text-l padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white py-4 px-6 rounded"><a href={% url "rental:details" pk=tool.pk %}>Details</a></button>
+        </div>
+
     {% endfor %}
     </ul>
     </div>
