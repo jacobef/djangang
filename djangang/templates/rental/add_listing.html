@@ -4,19 +4,89 @@
 
 {% block content %}
 <!-- add stuff here -->
-    table
-    <table>
+    <style>
+     body{
+          background-image: linear-gradient(135deg, #475fc5 0%, #330e55 100%);
+          }
+      p {
+          <!--color: yellow;-->
+          border: 1px solid black;
+      }
+      .content{
+          max-width:500px;
+          margin:auto;
+      }
+    </style>
+
+    <div class = "content">
+    <h1 style = "font-family:courier;">-Add your own lists-</h1>
+    </div>
+
+    <pre>
+    <table style = "width:100%">
+    <tr>
+        <th><label for = "location">Add Location:</label></th>
+        <th><label for = "description">Add Description:</label></th>
+        <th><label for = "tags">Add Tags:</label></th>
+        <th><label for = "schedule">Add Schedule:</label></th>
+    </tr>
+
+    <tr>
+        <!--<th><input type = "location"></form><br><br></th>-->
+        <th><textarea rows = "7" cols = "20" name = "location">--We'd love to know where to pick up your tools!
+        </textarea>
+        </th>
+
+        <!--<th><input type = "description"></form><br><br></th>-->
+        <th><textarea rows = "7" cols = "20" name = "description">--how your tools be like are important!
+        </textarea>
+        </th>
+            <!--<textarea rows = "5" cols = "10" name = "location">
+         </textarea><br><br>-->
+
+            <!--<textarea rows = "5" cols = "10" name = "location">
+         </textarea><br><br>-->
+        <!--<th><input type = "tags"></form><br><br></th>-->
+        <th><textarea rows = "7" cols = "20" name = "tags">--categorize your sells for easier search!
+        </textarea>
+        </th>
+
+        <!--<textarea rows = "5" cols = "10" name = "location">
+         </textarea><br><br>-->
+        <!--<th><input type = "schedule"></form><br><br></th>-->
+        <th><textarea rows = "7" cols = "20" name = "schedule">--Got free time to meet? will let buyers know!</textarea>
+        </th>
+    </tr>
+
+
+
 
     </table>
+    </pre>
 
-    body{
-          background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          }
-    <button type="button" value = "ADD PICTURE">Add Pictures</button>
+
+    <div class = "content">
     <title>Click for Pics</title>
-    <p>Click here to upload tool's pictures</p>
 
-        <label for = "location">Add Location:</label>
+    <pre>
+    <button type="button" value = "ADD PICTURE">Add Pictures
+    <p style = "color:yellow;">Click here to upload pics:</p>
+    </button>
+
+
+
+
+
+    <p style = "font-family: solid;" style ="font-size:120%;">Share your tools with everyone!</p>
+    </pre>
+
+
+
+
+
+
+
+        <!-- <label for = "location">Add Location:</label>
         <input type = "location"></form><br><br>
         <label for = "description">Add Description:</label>
         <input type = "text" name = "description"></form><br><br>
@@ -25,11 +95,8 @@
         <label for = "schedule">Add Schedule:</label>
         <input type = "datetime" name = "schedule"></form><br>
 
-        <p>Share your tools with everyone!</p>
+         -->
 
-        <form action="/action_page.php">
-        <input type="file" id="myFile" name="filename">
-        </form>
 
 
 {% endblock %}
