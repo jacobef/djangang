@@ -14,7 +14,10 @@ from rental.models import Tool
 def generate_tool_geojson(tool: Tool):
     return f"""        {{
         "type": "Feature",
-        "properties": {{}},
+        "properties": {{
+            "name": "{tool.name}",
+            "id": "{tool.id}",
+        }},
         "geometry": {{
             "type": "Point",
             "coordinates": [
