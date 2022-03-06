@@ -1,17 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block head %}
     {{ block.super }}
     {% load mapbox_location_field_tags %}
     {% location_field_includes %}
     {% include_jquery %}
+    <link rel="stylesheet" href={% static "add.css" %}>
 {% endblock %}
 
 {% block content %}
 <form method="post" class = "">
 {% csrf_token %}
    {{ form.as_ul }}
-   <input class = "float-right padding-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded" type="submit" value="Post">
+   <input class = "float-right padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white font-bold py-4 px-6 rounded" type="submit" value="Post">
 </form>
 {{ form.media }}
 {% endblock %}

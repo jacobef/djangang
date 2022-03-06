@@ -1,16 +1,29 @@
 {% extends "base.html" %}
 
+{% block title %} Search Results {% endblock %}
+
 {% block content %}
     {% if not tools.exists %}
-        <h2>No results found.</h2><br>
-        <h2><a href={% url "rental:search" %}>Back to search</a></h2>
-    {% endif %}
+        <h2 class="text-center text-3xl py-[20vh] text-white">No results found.</h2>
+        <h2 class="text-center text-xl pb-[20vh]"><button class="text-l padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white py-4 px-6 rounded"><a href={% url "rental:search" %}>Back to Search</a></h2>
+    {% else %}
+    <div class="w-[90vw] m-auto mt-[10vh]">
+    <h1 class="text-white text-left"> Search Results</h1>
+    <ul>
     {% for tool in tools %}
-        Name: {{ tool.name }}<br>
-        Type: {{ tool.type }}<br>
-        Brand: {{ tool.brand }}<br>
-        Price: {{ tool.price }}<br>
-        Owner: {{ tool.owner }}<br>
-        <a href={% url "rental:details" pk=tool.pk %}>View details</a><br>
+        <li class="py-4 text-white block">
+            <label class = "float-left p-[27px] pr-[40px] text-white"> {{ tool.id }}</label>
+            <p class="underline text-xl">{{ tool.name }}</p>
+            <p class = "font-normal">
+        Type: {{ tool.type }},
+        Brand: {{ tool.brand }},
+        Price: {{ tool.price }},
+        Owner: {{ tool.owner }}
+            </p>
+        </li>
+        <button class="float-right text-l padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white py-4 px-6 rounded"><a href={% url "rental:details" pk=tool.pk %}>Details</a></button>
     {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
 {% endblock %}

@@ -47,7 +47,7 @@ body{
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  color: darkblue;
+  color: deepskyblue;
 }
 
 /* Right-aligned section inside the top navigation */
@@ -75,8 +75,11 @@ textarea{
     padding-top: 10px;
     list-style: none;
     width: 600px;
-    display: inline-block;
+    vertical-align: middle;
+
 }
+
+
 
 form {
     margin-left: 20vw;
@@ -86,6 +89,7 @@ form {
 form label{
     color: white;
 }
+
 
 
 form #map{

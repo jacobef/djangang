@@ -86,7 +86,7 @@ for (const feature of geojson.features) {
         map.on('click', 'circle', (e) => {
             map.flyTo({
                 center: e.features[0].geometry.coordinates,
-                zoom: 6
+                zoom: 10
             });
 
 // Change the cursor to a pointer when the it enters a feature in the 'circle' layer.
