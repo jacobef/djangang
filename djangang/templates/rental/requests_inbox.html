@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if not rental_requests.exists %}
+        <h3>You have no pending rental requests in your inbox.</h3>
+    {% endif %}
+    {% for rental_request in rental_requests %}
+        Tool: {{ rental_request.tool.name }}
+        What they want to use it for: {{ rental_request.using_for }}
+        <a href={% url "rental:approve-request" pk=rental_request.pk %}>
+            Click here to approve the request (without a message)</a>
+        <a href={% url "rental:reject-request" pk=rental_request.pk %}>
+            Click here to reject the request (without a message)</a>
+    {% endfor %}
+{% endblock %}
