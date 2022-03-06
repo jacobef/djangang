@@ -5,82 +5,11 @@
 
 
 {% block content %}
-{#    <style>#}
-{##}
-{##}
-{#    body {#}
-{#        background-image: linear-gradient(to right, #ffecd2 0%, #ff794e 100%);#}
-{#        position: absolute;#}
-{#    }#}
-{##}
-{##}
-{#    img {#}
-{#        max-width: 100%;#}
-{#        max-height: 100%;#}
-{#        float: left;#}
-{#        top: 1000px;#}
-{#    }#}
-{#    .profile-pic {#}
-{#        height: 200px;#}
-{#        width: 200px;#}
-{##}
-{#        position: relative;#}
-{#        top: 75px;#}
-{#        left: 150px;#}
-{##}
-{#    }#}
-{##}
-{#    .My-tools {#}
-{#        position: relative;#}
-{#        font-family: "Comic Sans MS", "Comic Sans", cursive;#}
-{#        left: 500px;#}
-{#        bottom: 175px;#}
-{#    }#}
-{#    .My-rentals {#}
-{#        position: relative;#}
-{#        font-family: "Comic Sans MS", "Comic Sans", cursive;#}
-{##}
-{#        left: 500px;#}
-{#    }#}
-{##}
-{#    .upload-button {#}
-{#        position: relative;#}
-{#        top: 75px;#}
-{#        left: 150px;#}
-{#    }#}
-{##}
-{##}
-{#    </style>#}
-{#<style>#}
-{#img {#}
-{#  display: block;#}
-{#  margin-left: auto;#}
-{#  margin-right: auto;#}
-{#}#}
-{##}
-{#.vertical-center {#}
-{#  margin: 0;#}
-{#  position: absolute;#}
-{#  top: 50%;#}
-{#  -ms-transform: translateY(-50%);#}
-{#  transform: translateY(-50%);#}
-{#}#}
-{##}
-{#.container {#}
-{#  height: 100px;#}
-{#  position: relative;#}
-{#  border: 1px solid green;#}
-{#}#}
-{#</style>#}
 
-
-<style>
-
-</style>
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" class = "bg-black/25 py-4 px-6 rounded">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
+    {{ form.as_ul }}
+    <button type="submit" class = "mt-8 inline-block text-xl padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white py-4 px-6 rounded">Save</button>
 </form>
 
 <div class="My-tools">

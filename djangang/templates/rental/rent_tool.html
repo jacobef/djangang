@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Rental request to {{ tool.owner.get_full_name }} ({{ tool.owner.username }})</h2>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send rental request</button>
+    </form>
+{% endblock %}

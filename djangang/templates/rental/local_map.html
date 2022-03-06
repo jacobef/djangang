@@ -56,7 +56,7 @@ for (const feature of geojson.features) {
         .setPopup(
             new mapboxgl.Popup({offset: 25}) // add popups
                 .setHTML(
-                    `<h3 class = "text-xl">${feature.properties.name}</h3><a href="/rental/details/${feature.properties.id}" class = "inline-block text-l padding-10 bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded">Rent Now</a>`
+                    `<h3 class = "text-xl">${feature.properties.name}</h3><a href="/rental/tool/${feature.properties.id}" class = "inline-block text-l padding-10 bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded">Rent Now</a>`
                 )
         )
         .addTo(map);

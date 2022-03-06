@@ -18,3 +18,12 @@ class Tool(models.Model):
         OTHER = 'Other'
     type = models.CharField(choices=Type.choices, max_length=50)
 
+
+class RentalRequest(models.Model):
+    tool = models.ForeignKey(to=Tool, on_delete=models.CASCADE)
+    sender = models.ForeignKey(to=User, related_name="sender", on_delete=models.CASCADE)
+    recipient = models.ForeignKey(to=User, related_name="recipient", on_delete=models.CASCADE)
+    using_for = models.TextField(max_length=5000)
+    approved = models.BooleanField(null=True)
+    rejected = models.BooleanField(null=True)
+    decision_message = models.TextField(max_length=5000, null=True)
