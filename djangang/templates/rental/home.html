@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
+{% load static %}
 {% block title %}Home{% endblock %}
+
+{% block head %}
+
+<link rel="stylesheet" href={% static "home.css" %}>
+
+{% endblock %}
 
 {% block content %}
 
@@ -9,6 +16,8 @@
     <div class = "action-btn">
     <a href = {%  url "rental:add" %}>Post a Tool</a>
     </div>
+
+    <br><br>
 
     <div class = "action-btn">
     <a href= {%  url "rental:search" %}>Find a Tool</a>
