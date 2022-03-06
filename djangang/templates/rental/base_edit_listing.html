@@ -10,10 +10,10 @@
 {% endblock %}
 
 {% block content %}
-<form method="post" class = "">
+<form method="post" class = "bg-black/25 pt-4 px-6 rounded">
 {% csrf_token %}
    {{ form.as_ul }}
-   <input class = "float-right padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white font-bold py-4 px-6 rounded" type="submit" value="Post">
+   <input class = "float-right padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white font-normal py-4 px-6 rounded" type="submit" value="Post">
 </form>
 {{ form.media }}
 {% endblock %}

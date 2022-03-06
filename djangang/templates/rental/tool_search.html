@@ -11,9 +11,9 @@
 {#        background-image: linear-gradient(to top, #e3dbd7 0%, #18a1e7 100%);#}
 {#    }#}
 {#</style>#}
-<form method="post" action={% url "rental:search-results" %}>
+<form method="post" action={% url "rental:search-results" %} class = "bg-black/25 py-4 px-6 rounded">
     {% csrf_token %}
     {{ form.as_ul }}
-    <button type="submit" class="text-xl padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white font-bold py-2 px-4 rounded">Search</button>
+    <button type="submit" class=" float-right text-xl padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white font-bold py-2 px-4 rounded">Search</button>
 </form>
 {% endblock %}
