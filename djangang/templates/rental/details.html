@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Tool{% endblock %}
-{% block head %}<link rel="stylesheet" href={% static "rent.css" %}>{% endblock %}
+{% block head %}<link rel="stylesheet" href={% static "details.css" %}>{% endblock %}
 
 
 {% block content %}
 
-<h2></h2>
+<h2>Rent a Tool</h2>
 
     <div class = "action-btn">
     <a href = {%  url "rental:add" %}>Post a Tool</a>
     </div>
 
     <div class = "action-btn">
-    <a href= {%  url "rental:rent" %}>Rent a Tool</a>
+    <a href= {%  url "rental:details" %}>Rent a Tool</a>
     </div>
 
 
