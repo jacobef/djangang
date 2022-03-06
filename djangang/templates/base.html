@@ -8,16 +8,7 @@
     {% block head %} {% endblock %}
 </head>
 <body>
-{#<header>#}
-{#    <div class = "nav-logo"></div>#}
-{#    <nav class="main-nav">#}
-{#        <a href="/">Home</a>#}
-{#        <a href={% url "rental:search" %}>Search</a>#}
-{#        <a href={% url "rental:map" %}>Map</a>#}
-{#        <a href={% url "rental:add" %}>Add Tool</a>#}
-{#        <a href={% url "accounts:profile" %}>Profile</a>#}
-{#</nav>#}
-{#</header>#}
+
 
 <div class="topnav">
   <img src={% static "temptool-white.png" %}>
@@ -30,9 +21,14 @@
         <a href={% url "accounts:profile" %}>Profile</a>
   </div>
 </div>
+
+
 <div class = "banner">
+
 {% block content %}
+
 {% endblock %}
+
 </div>
 </body>
 </html>
