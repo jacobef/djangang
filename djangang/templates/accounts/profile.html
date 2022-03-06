@@ -51,22 +51,40 @@
 {##}
 {##}
 {#    </style>#}
+{#<style>#}
+{#img {#}
+{#  display: block;#}
+{#  margin-left: auto;#}
+{#  margin-right: auto;#}
+{#}#}
+{##}
+{#.vertical-center {#}
+{#  margin: 0;#}
+{#  position: absolute;#}
+{#  top: 50%;#}
+{#  -ms-transform: translateY(-50%);#}
+{#  transform: translateY(-50%);#}
+{#}#}
+{##}
+{#.container {#}
+{#  height: 100px;#}
+{#  position: relative;#}
+{#  border: 1px solid green;#}
+{#}#}
+{#</style>#}
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
 
+<div class="My-tools">
+    <h3>My Tools</h3>
+</div>
 
-    <div class="My-tools">
-        <h3>My Tools</h3>
-    </div>
-
-    <div class="My-rentals">
-        <h3>My Rentals</h3>
-    </div>
-
-
+<div class="My-rentals">
+    <h3>My Rentals</h3>
+</div>
 
 {% endblock %}

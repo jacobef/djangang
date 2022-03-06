@@ -50,6 +50,7 @@ body{
 /* Right-aligned section inside the top navigation */
 .topnav-right {
   float: right;
+    height: 50px;
 }
 
 .topnav img{
@@ -64,6 +65,18 @@ body{
     background-color: #333;
 }
 
+textarea{
+    height: 100px;
+}
+
+.banner li {
+    padding-top: 10px;
+        list-style: none;
+}
+
+form {
+    margin-left: 20px;
+}
 
 
 
