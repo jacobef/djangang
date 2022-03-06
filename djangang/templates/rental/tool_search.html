@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block title %}Tool Search{% endblock %}
+{% block head %}<link rel="stylesheet" href={% static "search.css" %}>{% endblock %}
 
 {% block content %}
 {#    <style>#}
@@ -10,7 +13,7 @@
 {#</style>#}
 <form method="post" action={% url "rental:search-results" %}>
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" style = "color:Yellow;" style = "font-family: courier;">Search</button>
+    {{ form.as_ul }}
+    <button type="submit" class="text-xl padding-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
 </form>
 {% endblock %}

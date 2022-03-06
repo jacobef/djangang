@@ -1,0 +1,13 @@
+form {
+    padding-top: 50px;
+    align-content: space-evenly;
+}
+
+li {
+    display: inline;
+    padding-right:15px;
+}
+
+label {
+        font-size: x-large;
+}

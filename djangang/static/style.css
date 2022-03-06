@@ -17,6 +17,11 @@ body{
     background-repeat: no-repeat;
 }
 
+#map-map-mapbox-location-field{
+    width: 60vw;
+    min-width: 600px;
+}
+
 .banner{
     height: calc(100vh - 50px);
 }
@@ -71,11 +76,16 @@ textarea{
 
 .banner li {
     padding-top: 10px;
-        list-style: none;
+    list-style: none;
 }
 
 form {
     margin-left: 20px;
+    color: white;
+}
+
+form #map{
+    width: 250px !important;
 }
 
 
