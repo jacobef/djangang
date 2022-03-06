@@ -34,7 +34,7 @@ class ToolCreateView(CreateView):
 
 class ToolUpdateView(UpdateView):
     model = Tool
-    fields = ["name", "location", "brand", "price", "type"]
+    fields = ["name", "brand", "price", "type", "location"]
     template_name = "rental/update_listing.html"
     success_url = reverse_lazy("rental:home")
 
