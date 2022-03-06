@@ -77,12 +77,19 @@ textarea{
 .banner li {
     padding-top: 10px;
     list-style: none;
+    width: 600px;
+    display: inline-block;
 }
 
 form {
-    margin-left: 20px;
+    margin-left: 20vw;
+    margin-top:10px;
+    width: 60vw;
+}
+form label{
     color: white;
 }
+
 
 form #map{
     width: 250px !important;

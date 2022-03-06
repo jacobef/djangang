@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    {% block head %} {% endblock %}
     <link rel="stylesheet" href={% static "style.css" %}>
     <script src="https://cdn.tailwindcss.com"></script>
-    {% block head %} {% endblock %}
 </head>
 <body>
 
