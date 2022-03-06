@@ -4,7 +4,6 @@ body{
     margin: auto;
     background-size: cover !important;
     background: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
-    overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
