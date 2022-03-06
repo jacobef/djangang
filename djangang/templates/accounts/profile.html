@@ -8,8 +8,8 @@
 
 <form method="post" enctype="multipart/form-data" class = "bg-black/25 py-4 px-6 rounded">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
+    {{ form.as_ul }}
+    <button type="submit" class = "mt-8 inline-block text-xl padding-10 bg-[#005bea] hover:bg-[#00c6fb] text-white py-4 px-6 rounded">Save</button>
 </form>
 
 <div class="My-tools">
