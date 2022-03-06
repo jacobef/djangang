@@ -1,0 +1,36 @@
+header .main-nav {
+    margin: auto;
+    width: 90%;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+header .main-nav ul {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav a:hover {
+  /*background-color: deepskyblue;*/
+  color: deepskyblue;
+}
+
+/* Add a color to the active/current link */
+.main-nav a.active {
+  /*background-color: darkblue;*/
+  color: darkblue;
+}
