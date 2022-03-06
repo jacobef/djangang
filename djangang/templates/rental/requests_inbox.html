@@ -1,15 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <div class = "text-white w-[60vw] h-[80vh] m-auto mt-8 p-16 bg-black/25 rounded">
     {% if not rental_requests.exists %}
         <h3>You have no pending rental requests in your inbox.</h3>
     {% endif %}
     {% for rental_request in rental_requests %}
-        Tool: {{ rental_request.tool.name }}
-        What they want to use it for: {{ rental_request.using_for }}
+        <div class="m-4 p-16 bg-black/25 rounded">
+        <div class = "inline-block w-[10vw]" >
+        <h3 class = ""> Tool: </h3> <p class = "text-l font-normal"> {{ rental_request.tool.name }} </p>
+        <h3 class = ""> Message: </h3> <p class = "text-l font-normal"> {{ rental_request.using_for }} </p>
+        </div>
+            <div class ="float-right inline-block">
+        <button class = "inline-block text-l p-6 bg-[#005bea] hover:bg-[#00c6fb] text-white rounded">
         <a href={% url "rental:approve-request" pk=rental_request.pk %}>
-            Click here to approve the request (without a message)</a>
+            Approve Request</a>
+        </button>
+        <button class = "inline-block text-l p-6 bg-[#005bea] hover:bg-[#00c6fb] text-white rounded">
         <a href={% url "rental:reject-request" pk=rental_request.pk %}>
-            Click here to reject the request (without a message)</a>
+            Deny Request</a>
+        </button>
+            </div>
+        </div>
+
     {% endfor %}
+    </div>
 {% endblock %}

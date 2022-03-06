@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+    <div class="text-white w-[60vw] m-auto mt-8 py-6">
     {% if not rental_requests.exists %}
         <h3>You have not sent any rental requests.</h3>
     {% endif %}
@@ -14,4 +16,5 @@
             Your request has been REJECTED.
         {% endif %}
     {% endfor %}
+     </div>
 {% endblock %}
